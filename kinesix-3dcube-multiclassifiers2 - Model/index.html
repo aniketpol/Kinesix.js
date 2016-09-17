@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<title>3dCube</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+<body>
+	<!-- copy all js files from tracker, copy-replace jquery.js -->
+	<video autoplay id="video" width="320" height="240"></video><!--video id is changed from videoContainer to video, also change the css file, also check style.css-->
+	
+	<!--included two following div tag from example_sunglsses.html -->
+	<div>
+		<canvas id="hullcanvas" style="background-color:white"></canvas>
+	</div>
+	
+	<div style="display:none">
+		
+		<canvas id="canvas" style="width:320;height=240;" width=320 height=240></canvas>
+	</div>
+	
+    <div id="AxesContainer"></div>
+
+	<div id="infobox" width=320 height=640 style="display:none">
+		<canvas id="trackcanvas" width=320 height=240></canvas>
+			<canvas id="focuscanvas"></canvas>
+	
+		<label id="res">result = </label><br>
+		<label id="per1">percent1 = </label><br>
+		<label id="per2">percent2 = </label>
+		<div id="coord"></div>
+	</div>
+	
+	<div id="wrapper"><b>&copy;KineSIX <b style="color:black;">All rights reserved</b></b></div>
+	
+	<div id="list">
+		<!--<img src="img/box.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_1.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_2.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_3.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_4.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_5.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_6.png" style="display:box; width:117px;">
+		<img src="img/sunglasses_7.png" style="display:box; width:117px;">-->
+	</div>
+	
+	<!-- object tracker js files -->
+	<script src="js/hull.js"></script>
+	<script src="js/IntegralBlurModified.js"></script>
+	<script src="js/compatibility.js"></script>
+	<script src="js/smoother.js"></script>	
+	<script src="js/objectdetect.js"></script>
+	
+	<!-- classifier -->
+	<script src="js/classifier/cstd100020001.js"></script>
+	<script src="js/classifier/jpeg1k1kfist995031.js"></script>
+	
+	<!-- original-- web.js is removed -->
+    <script src="js/cube/three.min.js"></script>
+    <script src='js/cube/dat.gui.js'></script>
+	<script src="js/cube/THREEx.KeyboardState.js"></script>
+	<script src ="js/cube/TrackballControls.js"></script>
+	<script src="js/cube/model2.js"></script>
+	
+	<!-- polygon macthing js files -->
+	<script src="js/shapes/sketchy.js"></script>
+	<script src="js/shapes/finger.js"></script>
+	<script src="js/shapes/fist2.js"></script>
+	<script src="js/shapes/palm.js"></script>
+	
+	<!-- event js files -->
+	<script src="js/event/mouse.js"></script>
+	<script src="js/event/developer.js"></script>
+	<script src="js/event/event.js"></script>
+	
+	<script src="js/loader.js"></script>
+	
+	<div>
+		<img id="glasses" src="img/box.png" style="position:absolute; display:none">	
+		<img id="glasses2" src="img/box.png" style="position:absolute; display:none" onload="startVideo()">
+	</div>
+	
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/Varad/Desktop/2AV-Review.htm#/11 -->
+<html lang="en"><head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>Copter using Kinesix</title>
+
+		<meta name="description" content="Browser Based 3D Modelling Using Hand Gestures">
+		<meta name="author" content="Group 2AV(Id: 07)">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+	</head>
+
+	<body style="transition: -webkit-transform 0.8s ease; -webkit-transition: -webkit-transform 0.8s ease;">
+	<div id="jscopter-container"></div>
+
+	<div id="disp"><canvas id="comp" style="display:none"></canvas></div>
+
+	<video autoplay id="video" width="320" height="240"></video><!--video id is changed from videoContainer to video, also change the css file, also check style.css-->
+	
+	<div style="display:none">
+		<canvas id="hullcanvas" style="background-color:white"></canvas>
+	</div>
+	
+	<div style="display:none">
+		
+		<canvas id="kinesixcanvas" style="width:320;height=240;" width=320 height=240></canvas>
+	</div>
+	<div style="display:none">
+				<canvas id="trackcanvas" width=320 height=240 ></canvas>
+			<canvas id="focuscanvas"></canvas>
+	</div>
+	
+	<script src="js/copter.js"></script>
+	
+			<!-- object tracker js files -->
+	<script src="js/hull.js"></script>
+	<script src="js/IntegralBlurModified.js"></script>
+	<script src="js/compatibility.js"></script>
+	<script src="js/smoother.js"></script>	
+	<script src="js/objectdetect.js"></script>
+
+	<!-- classifier -->
+	<script src="js/classifier/cstd100020001.js"></script>
+	<script src="js/classifier/jpeg1k1kfist995031.js"></script>
+
+			<!-- polygon macthing js files -->
+	<script src="js/shapes/sketchy.js"></script>
+	<script src="js/shapes/finger.js"></script>
+	<script src="js/shapes/fist2.js"></script>
+	<script src="js/shapes/palm.js"></script>
+	
+	<!-- event js files -->
+	<script src="js/event/mouse.js"></script>
+	<script src="js/event/developer.js"></script>
+	<script src="js/event/event.js"></script>
+	
+	<script src="js/loader.js"></script>
+	<img id="glasses2" src="img/box.png" style="position:absolute; display:none" onload="startVideo()">
+	
+		<script>
+		// initialise the copter
+    var options = {
+	copter : {
+            height : 15,
+            width : 30,
+			
+        },
+        canvas : {
+            height : 600,
+            width : 1000,
+            refreshRate : 10
+        }
+    }
+    
+    jsCopter.init("jscopter", "jscopter-container", options);
+		</script>
+</body></html>
